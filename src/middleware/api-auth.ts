@@ -11,14 +11,8 @@ export const apiAuth = async (req: Request, res: Response, next: NextFunction) =
         throw new NotAuthorizedError();
     }
 
-    // verify the api key provided 
     try{ 
-        // find a consumer with the api key supplied
-        const consumer = await Consumer.findOne({ api_key });
-        
-        if(!consumer){
-            throw new NotAuthorizedError();
-        }
+         // verify the api key provided 
     }   
     catch (err) {
         throw new InternalServerError();
